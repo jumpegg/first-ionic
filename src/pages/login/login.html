@@ -1,0 +1,22 @@
+<ion-content padding>
+	<div class="cat">
+		<img src="assets/img/Cat-typing.gif" class="circle">
+	</div>
+	<p class="main-title">
+		Hello Text Share
+	</p>
+	<div class="loginWrapper">
+		<input type="text" placeholder="User name" [(ngModel)]="user.id">
+		<input type="text" placeholder="Password" [(ngModel)]="user.password">
+	</div>
+	<div class="btnBox">
+		<button type="button" class="btn-flat" (click)="login(user)">LOGIN</button>
+	</div>
+	<div class="bottom">
+		<a href="">비밀번호 찾기</a>
+		<div class="join">
+			<span>TextShare</span>
+			<a href="">가입하기</a>
+		</div>
+	</div>
+</ion-content>
