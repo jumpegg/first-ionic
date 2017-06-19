@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserpagePage } from '../userpage/userpage';
 import { User } from '../../vo/user';
+import { UserService } from '../../providers/user.service';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,7 +20,8 @@ export class LoginPage {
 
   constructor(
 		public navCtrl: NavController, 
-		public navParams: NavParams) {
+		public navParams: NavParams,
+		private userService: UserService) {
   }
 
   ionViewDidLoad() {
@@ -36,7 +38,15 @@ export class LoginPage {
 		}else if(input.password.trim().length == 0){
 			alert("비밀번호를 입력하세요");
 		}else{
-			this.navCtrl.push(UserpagePage);
+			this.userService
+			.userLogin(input)
+			.subscribe(
+				data=>{
+					if(data){
+						this.navCtrl.push(UserpagePage);
+					}
+				}
+			)
 		}
 	}
 
