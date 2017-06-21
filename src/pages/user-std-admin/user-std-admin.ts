@@ -24,13 +24,6 @@ export class UserStdAdminPage {
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad UserStdAdminPage');
-		// this.userService
-		// .chkSess()
-		// .subscribe(
-		// 	data=>{
-		// 		console.log(data);
-		// 	}
-		// )
 	}
 
 }

@@ -25,18 +25,19 @@
 
 	<ion-content class="user-link-list">
 		<ul class="user_side_list">
-			<li><ion-icon name="md-person"></ion-icon>My Page</li>
+			<li (click)="openPage(pages.userStdAdmin)"><ion-icon name="md-person"></ion-icon>My Page</li>
 			<li><ion-icon name="md-people"></ion-icon>Study Manage</li>
 			<ul class="sub-list">
-				<li>StudyList</li>
-				<li>StudySearch</li>
+				<li (click)="openPage(pages.stdList)">StudyList</li>
+				<li (click)="openPage(pages.stdSearch)">StudySearch</li>
 			</ul>
 			<li><ion-icon name="md-send"></ion-icon>TextShare</li>
 			<ul class="sub-list">
-				<li>Textshare</li>
+				<li (click)="openPage(pages.textshare)">Textshare</li>
 			</ul>
 		</ul>
 	</ion-content>
+	
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content></ion-nav>

@@ -9,6 +9,10 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { UserpagePage } from '../pages/userpage/userpage';
 import { UserStdAdminPage } from '../pages/user-std-admin/user-std-admin';
+import { MypagePage } from '../pages/mypage/mypage';
+import { StdListPage } from '../pages/std-list/std-list';
+import { StdSearchPage } from '../pages/std-search/std-search';
+import { TextsharePage } from '../pages/textshare/textshare';
 
 import { UserService } from '../providers/user.service';
 import { AccountService } from '../providers/account.service';
@@ -30,7 +34,11 @@ import { UserInfo } from '../providers/userinfo.service';
     MyApp,
 		LoginPage,
 		UserpagePage,
-		UserStdAdminPage
+		UserStdAdminPage,
+		MypagePage,
+		StdListPage,
+		StdSearchPage,
+		TextsharePage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,11 @@ import { UserInfo } from '../providers/userinfo.service';
     MyApp,
 		LoginPage,
 		UserpagePage,
-		UserStdAdminPage
+		UserStdAdminPage,
+		MypagePage,
+		StdListPage,
+		StdSearchPage,
+		TextsharePage
   ],
   providers: [
     StatusBar,
