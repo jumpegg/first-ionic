@@ -4,24 +4,43 @@
 		<button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>Hello TextShare</ion-title>
+		<ion-title text-center>Hello TextShare</ion-title>
 	</ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
-	<ion-card>
+	<ion-card *ngIf="no_admin">
 		<ion-item>
 			<ion-avatar item-start>
 				<img src="assets/img/logo_or.svg">
 			</ion-avatar>
-			<h2>가산 스터디</h2>
-			<p>다음모임: 2017-06-25</p>
+			<h2>관리중인 스터디가 없습니다.</h2>
+			<p>새로운 스터디를 만들어보세요!</p>
 		</ion-item>
 
-		<ion-card-content>
-			<p>가산에서 하는 프로젝트 겸 스터디</p>
-		</ion-card-content>
+		<ion-row class="card-bottom">
+			<ion-col>
+				<button ion-button clear text-center>
+					<div></div>
+				</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button clear text-center>
+					<div></div>
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+
+	<ion-card *ngFor="let study of studyList">
+		<ion-item>
+			<ion-avatar item-start>
+				<img src="assets/img/logo_or.svg">
+			</ion-avatar>
+			<h2>{{study.studyname}}</h2>
+			<p>다음모임: {{study.place_name}}</p>
+		</ion-item>
 
 		<ion-row class="card-bottom">
 			<ion-col>
@@ -37,18 +56,37 @@
 		</ion-row>
 	</ion-card>
 
-	<ion-card>
+	<ion-card *ngIf="no_join">
 		<ion-item>
 			<ion-avatar item-start>
 				<img src="assets/img/logo_or.svg">
 			</ion-avatar>
-			<h2>가산 스터디</h2>
-			<p>다음모임: 2017-06-25</p>
+			<h2>가입된 스터디가 없습니다.</h2>
+			<p>스터디에 가입해보세요!</p>
 		</ion-item>
 
-		<ion-card-content>
-			<p>가산에서 하는 프로젝트 겸 스터디</p>
-		</ion-card-content>
+		<ion-row class="card-bottom">
+			<ion-col>
+				<button ion-button clear text-center>
+					
+				</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button clear text-center>
+					<div>바로가기</div>
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+
+	<ion-card *ngFor="let joinStudy of joinList">
+		<ion-item>
+			<ion-avatar item-start>
+				<img src="assets/img/logo_or.svg">
+			</ion-avatar>
+			<h2>{{joinStudy.studyname}}</h2>
+			<p>다음모임: {{joinStudy.place_name}}</p>
+		</ion-item>
 
 		<ion-row class="card-bottom">
 			<ion-col>
