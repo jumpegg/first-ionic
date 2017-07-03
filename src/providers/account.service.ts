@@ -16,15 +16,15 @@ export class AccountService{
 	}
 	// create
 	accCreate(input){
-		return this.http.post('/api/study/new_account', input,{headers:this.header})
+		return this.http.post('/api/study/account', input,{headers:this.header})
 			.map(res=>res.json());
 	}
 	infoCreate(input){
-		return this.http.post('/api/study/new_acc_info', input, {headers:this.header})
+		return this.http.post('/api/study/acc_info', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	userCreate(input){
-		return this.http.post('/api/study/new_acc_user', input, {headers:this.header})
+		return this.http.post('/api/study/acc_user', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	// list
@@ -44,27 +44,26 @@ export class AccountService{
 		return this.http.get('/api/study/getOne_account/'+input, {headers:this.header})
 			.map(res=>res.json());
 	}
-
 	accGetLastOne(){
 		return this.http.get('/api/study/list_acc_get_last', {headers:this.header})
 			.map(res=>res.json());
 	}
 	// update
 	accUpdate(input){
-		return this.http.post('/api/study/update_account', input, {headers:this.header})
+		return this.http.put('/api/study/account', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	userUpdate(input){
-		return this.http.post('/api/study/update_acc_user', input, {headers:this.header})
+		return this.http.put('/api/study/acc_user', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	// delete
 	infoDelete(input){
-		return this.http.get('/api/study/delete_acc_info/'+input, {headers:this.header})
+		return this.http.delete('/api/study/acc_info/'+input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	userDelete(input){
-		return this.http.get('/api/study/delete_acc_user/'+input, {headers:this.header})
+		return this.http.delete('/api/study/acc_user/'+input, {headers:this.header})
 			.map(res=>res.json());
 	}
 }

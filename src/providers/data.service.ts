@@ -11,7 +11,7 @@ export class DataService{
 	}
 
 	createFolder(input){
-		return this.http.post('/api/study/new_folder_data', input, {headers:this.header})
+		return this.http.post('/api/study/folder_data', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	getStudyInfo(){

@@ -18,4 +18,22 @@
 
 <ion-content padding>
 
+	<ion-card class="mypage_wrap">
+		<ion-row class="mypage_content">
+			<div class="input-field">
+				<input type="text" class="validate" [(ngModel)]="userInfo.id">
+				<label for="" class="active">ID</label>
+			</div>
+			<div class="input-field">
+				<input type="text" class="validate" [(ngModel)]="userInfo.email">
+				<label for="" class="active">Email</label>
+			</div>
+			<div class="input-field">
+				<textarea class="materialize-textarea" [(ngModel)]="userInfo.intro"></textarea>
+				<label for="" class="active">username</label>
+			</div>
+		</ion-row>
+		
+	</ion-card>
+
 </ion-content>

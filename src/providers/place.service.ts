@@ -22,11 +22,11 @@ export class PlaceService{
 			.map(res => res.json());
 	}
 	placeInsert(input){
-		return this.http.post('/api/user/place_new', input, {headers:this.header})
+		return this.http.post('/api/user/place', input, {headers:this.header})
 			.map(res => res.json());
 	}
 	placeRemove(input){
-		return this.http.get('/api/user/place_remove/'+input, {headers:this.header})
+		return this.http.delete('/api/user/place/'+input, {headers:this.header})
 			.map(res => res.json());
 	}
 	getPlaceList(input){

@@ -1,4 +1,11 @@
 page-mypage {
+	.mypage_content{
+		padding: 10px;
+		.input-field{
+			width: 100%;
+			font-size: 20px;
+		}
+	}
 	.toolbar-background{
 		background-color: #FFB300;
 		color: #FFFFFF;

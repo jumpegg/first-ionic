@@ -13,7 +13,7 @@ export class TextShareService{
 	}
 
 	tsInsert(input:TextShare){
-		return this.http.post('/api/user/ts_create', input, {headers:this.header})
+		return this.http.post('/api/user/textshare', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	tsRead(input:number){
@@ -21,7 +21,7 @@ export class TextShareService{
 			.map(res=>res.json());
 	}
 	tsUpdate(input){
-		return this.http.post('/api/user/ts_update', input, {headers:this.header})
+		return this.http.put('/api/user/textshare', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 }

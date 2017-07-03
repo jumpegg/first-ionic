@@ -10,12 +10,37 @@
 		<button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-    <ion-title text-center>Study Search</ion-title>
+    <ion-title text-center>Study search</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
+	
+	<ion-card class="search-box">
+		<input type="text" [(ngModel)]="searchText">
+		<button class="btn-flat" (click)="get_study_list(searchText)">검색</button>
+	</ion-card>
+
+	<ion-card *ngFor="let study of studyList">
+		<ion-item>
+			<ion-avatar item-start>
+				<img src="assets/img/logo_or.svg">
+			</ion-avatar>
+			<h2>{{study.studyname}}</h2>
+			<p>간략소개: {{study.info}}</p>
+		</ion-item>
+
+		<ion-row class="card-bottom">
+			<ion-col>
+				<button ion-button clear text-center>
+				</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button clear text-center>
+					<div>바로가기</div>
+				</button>
+			</ion-col>
+		</ion-row>
+	</ion-card>
 
 </ion-content>

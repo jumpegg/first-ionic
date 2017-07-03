@@ -12,7 +12,7 @@ export class StudyService{
 		this.header = new Headers({'Content-Type':'application/json'});
 	}
 	callMap(){
-		return this.http.get('/study/map', {headers: this.header});
+		return this.http.get('/api/study/map', {headers: this.header});
 	}
 	/* study 관련 함수들 
 		studyNew: 스터디 생성
@@ -24,17 +24,16 @@ export class StudyService{
 		return this.http.get('/api/user/study_enter/'+input, {headers:this.header})
 			.map(res=>res.json());
 	}
-	
 	studySet(){
 		return this.http.get('/api/user/study_set', {headers:this.header})
 			.map(res=>res.json());
 	}
 	studyNew(input){
-		return this.http.post('/api/user/study_new', input, {headers:this.header})
+		return this.http.post('/api/user/study', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	studyModify(input){
-		return this.http.post('/api/user/study_modify', input, {headers:this.header})
+		return this.http.put('/api/user/study', input, {headers:this.header})
 			.map(res=>res.json());
 	}
 	studyOne(input){

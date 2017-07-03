@@ -1,4 +1,26 @@
 page-std-search {
+	.label.label-md h2{
+		margin-top: 0;
+	}
+	.search-box{
+		padding: 10px 20px 0px 20px;
+		overflow: hidden;
+	}
+	.search-box input{
+		float: left;
+		width: 70%;
+	}
+	.search-box .btn-flat{
+		width: 25%;
+		height: 35px;
+		line-height: 35px;
+		float: right;
+		background-color: #FFB300;
+		color: #FFFFFF;
+		border-radius: 5px;
+		padding: 0px;
+		font-size: 16px;
+	}
 	.toolbar-background{
 		background-color: #FFB300;
 		color: #FFFFFF;

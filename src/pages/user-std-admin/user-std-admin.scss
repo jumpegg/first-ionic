@@ -1,4 +1,7 @@
 page-user-std-admin {
+	.label.label-md h2{
+		margin-top: 0;
+	}
 	.toolbar-background{
 		background-color: #FFB300;
 		color: #FFFFFF;
@@ -12,4 +15,5 @@ page-user-std-admin {
 			text-align: center;
 		}
 	}
+
 }
