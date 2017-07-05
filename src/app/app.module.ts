@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -8,11 +9,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { UserpagePage } from '../pages/userpage/userpage';
-import { UserStdAdminPage } from '../pages/user-std-admin/user-std-admin';
-import { MypagePage } from '../pages/mypage/mypage';
-import { StdListPage } from '../pages/std-list/std-list';
-import { StdSearchPage } from '../pages/std-search/std-search';
-import { TextsharePage } from '../pages/textshare/textshare';
+import { UserStdAdminPage } from '../pages/userpage/user-std-admin/user-std-admin';
+import { MypagePage } from '../pages/userpage/mypage/mypage';
+import { StdListPage } from '../pages/userpage/std-list/std-list';
+import { StdSearchPage } from '../pages/userpage/std-search/std-search';
+import { TextsharePage } from '../pages/userpage/textshare/textshare';
+import { TextModalPage } from '../pages/userpage/textshare/text-modal/text-modal';
 
 import { UserService } from '../providers/user.service';
 import { AccountService } from '../providers/account.service';
@@ -29,6 +31,8 @@ import { StudyService } from '../providers/study.service';
 import { TextShareService } from '../providers/textshare.service';
 import { UserInfo } from '../providers/userinfo.service';
 
+import 'rxjs/add/operator/mergeMap';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -38,10 +42,12 @@ import { UserInfo } from '../providers/userinfo.service';
 		MypagePage,
 		StdListPage,
 		StdSearchPage,
-		TextsharePage
+		TextsharePage,
+		TextModalPage
   ],
   imports: [
     BrowserModule,
+		BrowserAnimationsModule,
 		HttpModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -54,7 +60,8 @@ import { UserInfo } from '../providers/userinfo.service';
 		MypagePage,
 		StdListPage,
 		StdSearchPage,
-		TextsharePage
+		TextsharePage,
+		TextModalPage
   ],
   providers: [
     StatusBar,

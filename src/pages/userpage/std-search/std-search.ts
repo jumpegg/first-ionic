@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { StudyService } from '../../providers/study.service';
+import { StudyService } from '../../../providers/study.service';
 /**
  * Generated class for the StdSearchPage page.
  *

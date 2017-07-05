@@ -7,11 +7,11 @@ import {
 	MenuController,
 	Nav
  } from 'ionic-angular';
-import { UserStdAdminPage } from '../user-std-admin/user-std-admin';
-import { MypagePage } from '../mypage/mypage';
-import { StdListPage } from '../std-list/std-list';
-import { StdSearchPage } from '../std-search/std-search';
-import { TextsharePage } from '../textshare/textshare';
+import { UserStdAdminPage } from './user-std-admin/user-std-admin';
+import { MypagePage } from './mypage/mypage';
+import { StdListPage } from './std-list/std-list';
+import { StdSearchPage } from './std-search/std-search';
+import { TextsharePage } from './textshare/textshare';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 /**

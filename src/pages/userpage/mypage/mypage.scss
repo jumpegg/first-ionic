@@ -6,6 +6,13 @@ page-mypage {
 			font-size: 20px;
 		}
 	}
+	input[type=text]{
+		font-size: 1.5rem;
+	}
+	.input-field label:not(.label-icon).active,
+	input[type=text].validate+label{
+		font-size: 1.2rem;
+	}
 	.toolbar-background{
 		background-color: #FFB300;
 		color: #FFFFFF;
