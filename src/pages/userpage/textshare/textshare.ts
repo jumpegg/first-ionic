@@ -37,12 +37,12 @@ export class TextsharePage {
 		this.makeTree();
   }
 
-  openModal() {
-    let modal = this.modalCtrl.create(TextModalPage);
+  openModal(input) {
+    let modal = this.modalCtrl.create(TextModalPage, {idx: input});
     modal.present();
   }
-	toggler(){
-		this.toggleTest = (this.toggleTest == "close") ? "open" : "close";
+	toggler(input){
+		input.state = (input.state == "close") ? "open" : "close";
 	}
 	makeTree(){
 		this.folderService

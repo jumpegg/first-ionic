@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { StudyPage } from '../../study/study'
+
 import { UserService } from '../../../providers/user.service';
 import { StudyService } from '../../../providers/study.service';
 import { ScheduleService } from '../../../providers/schedule.service';
@@ -82,6 +84,10 @@ export class UserStdAdminPage {
 				}
 			)
 		})
+	}
+
+	moveToStudy(input){
+		this.navCtrl.push(StudyPage,{idx:input});
 	}
 
 }

@@ -1,30 +1,28 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-
 /**
- * Generated class for the StdListPage page.
+ * Generated class for the StudyPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-std-list',
-  templateUrl: 'std-list.html',
+  selector: 'page-study',
+  templateUrl: 'study.html',
 })
-export class StdListPage {
+export class StudyPage {
 
   constructor(
 		public navCtrl: NavController, 
-		public navParams: NavParams
-		) {
+		public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad StdListPage');
+    console.log('ionViewDidLoad StudyPage');
+		console.log(this.navParams.get('idx'));
+		this.navCtrl.setRoot(StudyPage);
   }
-
-	
 
 }

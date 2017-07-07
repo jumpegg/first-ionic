@@ -16,33 +16,15 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-list>
-		<ion-list-header (click)="toggler()">
-			Hobbits
+	<ion-list *ngFor="let folder of folders">
+		<ion-list-header class="folder-label" (click)="toggler(folder)">
+		 <ion-icon name="ios-arrow-forward" *ngIf="folder.state == 'close'"></ion-icon>	
+		 <ion-icon name="ios-arrow-down" *ngIf="folder.state == 'open'"></ion-icon>	
+		 {{ folder.name }} ({{ folder.items.length }})
 		</ion-list-header>
-		<div class="list-toggle-wrapper" [@HeightToggle]="toggleTest">
-			<a ion-item (click)="openModal()">
-				Gollum
-			</a>
-			<a ion-item (click)="openModal()">
-				Frodo Baggins
-			</a>
-			<a ion-item (click)="openModal()">
-				Sam
-			</a>
-		</div>
-		<ion-list-header (click)="toggler()">
-			Hobbits
-		</ion-list-header>
-		<div class="list-toggle-wrapper" [@HeightToggle]="toggleTest">
-			<a ion-item (click)="openModal()">
-				Gollum
-			</a>
-			<a ion-item (click)="openModal()">
-				Frodo Baggins
-			</a>
-			<a ion-item (click)="openModal()">
-				Sam
+		<div class="list-toggle-wrapper" [@HeightToggle]="folder.state">
+			<a ion-item *ngFor="let item of folder.items" (click)="openModal(item.itemIdx)">
+				{{ item.itemName }}
 			</a>
 		</div>
 	</ion-list>

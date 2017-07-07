@@ -42,8 +42,10 @@ export class LoginPage {
 			.userLogin(input)
 			.subscribe(
 				data=>{
-					if(data){
+					if(!data.msg){
 						this.navCtrl.push(UserpagePage);
+					}else{
+						alert('아이디, 비밀번호를 확인해주세요');
 					}
 				}
 			)

@@ -16,6 +16,8 @@ import { StdSearchPage } from '../pages/userpage/std-search/std-search';
 import { TextsharePage } from '../pages/userpage/textshare/textshare';
 import { TextModalPage } from '../pages/userpage/textshare/text-modal/text-modal';
 
+import { StudyPage } from '../pages/study/study'
+
 import { UserService } from '../providers/user.service';
 import { AccountService } from '../providers/account.service';
 import { CommentService } from '../providers/comment.service';
@@ -43,7 +45,8 @@ import 'rxjs/add/operator/mergeMap';
 		StdListPage,
 		StdSearchPage,
 		TextsharePage,
-		TextModalPage
+		TextModalPage,
+		StudyPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import 'rxjs/add/operator/mergeMap';
 		StdListPage,
 		StdSearchPage,
 		TextsharePage,
-		TextModalPage
+		TextModalPage,
+		StudyPage
   ],
   providers: [
     StatusBar,
