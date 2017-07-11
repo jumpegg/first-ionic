@@ -87,7 +87,8 @@ export class UserStdAdminPage {
 	}
 
 	moveToStudy(input){
-		this.navCtrl.push(StudyPage,{idx:input});
+		// this.navCtrl.push(StudyPage,{idx:input});
+		this.navCtrl.setRoot(StudyPage,{idx:input});
 	}
 
 }

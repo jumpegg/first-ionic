@@ -1,4 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { 
 	IonicPage, 
 	NavController, 
@@ -12,8 +14,6 @@ import { MypagePage } from './mypage/mypage';
 import { StdListPage } from './std-list/std-list';
 import { StdSearchPage } from './std-search/std-search';
 import { TextsharePage } from './textshare/textshare';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
 /**
  * Generated class for the UserpagePage page.
  *
@@ -66,7 +66,7 @@ export class UserpagePage {
 		// close the menu when clicking a link from the menu
 		this.menu.close();
 		// navigate to the new page if it is not the current page
-		this.nav.setRoot(input);
+		this.nav.push(input);
 	}
 
 }

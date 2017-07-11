@@ -43,7 +43,7 @@ export class LoginPage {
 			.subscribe(
 				data=>{
 					if(!data.msg){
-						this.navCtrl.push(UserpagePage);
+						this.navCtrl.setRoot(UserpagePage);
 					}else{
 						alert('아이디, 비밀번호를 확인해주세요');
 					}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { TextModalPage } from './text-modal/text-modal';
-import { HeightToggle } from '../../../animation/heightToggle';
+import { HeightToggle } from '../../../animation/toggle.animation';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { FolderService } from '../../../providers/folder.service';
 

@@ -16,6 +16,15 @@ import { StdSearchPage } from '../pages/userpage/std-search/std-search';
 import { TextsharePage } from '../pages/userpage/textshare/textshare';
 import { TextModalPage } from '../pages/userpage/textshare/text-modal/text-modal';
 
+import { AccountPage } from '../pages/study/account/account';
+import { DataPage } from '../pages/study/data/data';
+import { FlowPage } from '../pages/study/flow/flow';
+import { FreetalkPage } from '../pages/study/freetalk/freetalk';
+import { IndexPage } from '../pages/study/index/index';
+import { MemberPage } from '../pages/study/member/member';
+import { NoticePage } from '../pages/study/notice/notice';
+import { SchedulePage } from '../pages/study/schedule/schedule';
+
 import { StudyPage } from '../pages/study/study'
 
 import { UserService } from '../providers/user.service';
@@ -46,7 +55,15 @@ import 'rxjs/add/operator/mergeMap';
 		StdSearchPage,
 		TextsharePage,
 		TextModalPage,
-		StudyPage
+		StudyPage,
+		AccountPage,
+		DataPage,
+		FlowPage,
+		FreetalkPage,
+		IndexPage,
+		MemberPage,
+		NoticePage,
+		SchedulePage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +82,15 @@ import 'rxjs/add/operator/mergeMap';
 		StdSearchPage,
 		TextsharePage,
 		TextModalPage,
-		StudyPage
+		StudyPage,
+		AccountPage,
+		DataPage,
+		FlowPage,
+		FreetalkPage,
+		IndexPage,
+		MemberPage,
+		NoticePage,
+		SchedulePage
   ],
   providers: [
     StatusBar,
