@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StudyPage } from '../../study/study'
 
 import { UserService } from '../../../providers/user.service';
@@ -26,7 +26,8 @@ export class UserStdAdminPage {
 		public navParams: NavParams,
 		private userService: UserService,
 		private studyService: StudyService,
-		private scheduleService: ScheduleService
+		private scheduleService: ScheduleService,
+		private appCtrl: App
 		) {
 	}
 
@@ -87,8 +88,9 @@ export class UserStdAdminPage {
 	}
 
 	moveToStudy(input){
+		this.appCtrl.getRootNav().setRoot(StudyPage,{idx:input});
 		// this.navCtrl.push(StudyPage,{idx:input});
-		this.navCtrl.setRoot(StudyPage,{idx:input});
+		// this.navCtrl.setRoot(StudyPage,{idx:input});
 	}
 
 }

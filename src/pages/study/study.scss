@@ -1,3 +1,60 @@
 page-study {
-
+	.bar-buttons{
+		background-color: #AB47BC;
+		color: #FFFFFF;
+	}
+	.page-toolbar .toolbar-background{
+		background-color: #616161;
+	}
+	.user_top{
+		overflow: hidden;
+	}
+	.user_pic{
+		width: 80px;
+		height: 80px;
+		margin: 10px 10px;
+		background-color: black;
+		float:left;
+	}
+	.user_info{
+		width: 150px;
+		color: #FFFFFF;
+		font-size: 14px;
+		float:left;
+		padding-top: 15px;
+		text-align: right;
+		line-height: 25px;
+	}
+	.user_bottom{
+		color: #FFFFFF;
+		padding-left: 5px;
+		text-align: right;
+	}
+	.user_side_list{
+		font-size: 16px;
+		padding-left: 10px;
+		margin-top: 10px;
+		li{
+			padding: 10px 10px;
+		}
+		ion-icon{
+			margin-right: 10px;
+		}
+		.sub-list{
+			padding-left: 60px;
+			font-size: 16px;
+			color: #666666;
+		}
+	}
+	.content-md{
+		background-color: #f3f3f3;
+	}
+	.toolbar-background{
+		background-color: #AB47BC;
+		color: #FFFFFF;
+	}
+	.toolbar-title{
+		color: #FFFFFF;
+		text-align:center;
+	}
 }

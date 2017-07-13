@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { 
 	IonicPage, 
 	NavController, 
@@ -26,17 +26,17 @@ import { IndexPage } from './index/index';
  */
 @IonicPage()
 @Component({
-  selector: 'page-study',
-  templateUrl: 'study.html',
+	selector: 'page-study',
+	templateUrl: 'study.html',
 })
 export class StudyPage {
 	@ViewChild(Nav) nav : Nav;
 
 	rootPage = IndexPage;
 	pages: any;
-  constructor(
+	constructor(
 		public navCtrl: NavController, 
-		public menu: MenuController,
+		public menuCtrl: MenuController,
 		public navParams: NavParams,
 		public platform: Platform,
 		public StatusBar: StatusBar,
@@ -51,7 +51,7 @@ export class StudyPage {
 				flow : FlowPage,
 				data : DataPage
 			}
-  }
+		}
 
 	initializeApp(){
 		this.platform.ready().then(()=>{
@@ -60,16 +60,15 @@ export class StudyPage {
 		});
 	}
 
-  ionViewDidLoad() {
+ 	ionViewDidLoad() {
 		console.log(this.navParams.get('idx'));
-		// this.navCtrl.setRoot(StudyPage);
-  }
+		this.menuCtrl.enable(true, 'studyMenu');
+  		this.menuCtrl.enable(false, 'userpageMenu');
+ 	}
 
 	openPage(input){
-		this.menu.close();
-		this.nav.push(input);
+		this.menuCtrl.close();
+		this.nav.setRoot(input);
 	}
-
-
 
 }

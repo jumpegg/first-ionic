@@ -14,6 +14,7 @@ import { MypagePage } from './mypage/mypage';
 import { StdListPage } from './std-list/std-list';
 import { StdSearchPage } from './std-search/std-search';
 import { TextsharePage } from './textshare/textshare';
+
 /**
  * Generated class for the UserpagePage page.
  *
@@ -34,7 +35,7 @@ export class UserpagePage {
 	constructor(
 		public navCtrl: NavController,
 		public navParams: NavParams,
-		public menu: MenuController,
+		public menuCtrl: MenuController,
 		public platform: Platform,
 		public statusBar: StatusBar,
 		public splashScreen: SplashScreen) {
@@ -60,13 +61,15 @@ export class UserpagePage {
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad UserpagePage');
+		this.menuCtrl.enable(false, 'studyMenu');
+  		this.menuCtrl.enable(true, 'userpageMenu');
 	}
 
 	openPage(input) {
 		// close the menu when clicking a link from the menu
-		this.menu.close();
+		this.menuCtrl.close();
 		// navigate to the new page if it is not the current page
-		this.nav.push(input);
+		this.nav.setRoot(input);
 	}
 
 }

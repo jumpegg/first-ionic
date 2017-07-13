@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserpagePage } from '../userpage/userpage';
 import { User } from '../../vo/user';
 import { UserService } from '../../providers/user.service';
@@ -21,7 +21,8 @@ export class LoginPage {
   constructor(
 		public navCtrl: NavController, 
 		public navParams: NavParams,
-		private userService: UserService) {
+		private userService: UserService,
+		private appCtrl: App) {
   }
 
   ionViewDidLoad() {
@@ -43,7 +44,7 @@ export class LoginPage {
 			.subscribe(
 				data=>{
 					if(!data.msg){
-						this.navCtrl.setRoot(UserpagePage);
+						this.appCtrl.getRootNav().setRoot(UserpagePage);
 					}else{
 						alert('아이디, 비밀번호를 확인해주세요');
 					}
