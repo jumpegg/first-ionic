@@ -17,5 +17,61 @@
 
 
 <ion-content padding>
+	<ion-card class="latest-schedule">
+		<ion-card-header class="studyBG">
+			다음 모임 일정
+		</ion-card-header>
+		<ion-list>
+			<ion-item>
+				<ion-icon name="md-calendar" item-start></ion-icon>
+				<span>DATE</span>
+				{{lastSch.gathering|date:"yyyy-MM-dd"}}
+			</ion-item>
+			<ion-item>
+				<ion-icon name="md-alarm" item-start></ion-icon>
+				<span>TIME</span>
+				{{lastSch.start}} ~ {{lastSch.end}}
+			</ion-item>
+			<ion-item>
+				<ion-icon name="logo-usd" item-start></ion-icon>
+				<span>COST</span>
+				{{lastSch.cost}} 원
+			</ion-item>
+			<ion-item>
+				<ion-icon name="ios-compass-outline" item-start></ion-icon>
+				<span class="label">PLACE</span>
+				{{lastPlc.name}}
+			</ion-item>
+			<ion-item id="map" class="StudySchedule">
 
+			</ion-item>
+		</ion-list>
+		
+	</ion-card>
+
+	<ion-card class="tableWrapper">
+		<ion-card-header class="studyBG" (click)="tableOpener()">
+			이전 스케쥴 보기 <ion-icon name="ios-arrow-down" *ngIf="tableState == 'close'"></ion-icon> <ion-icon name="ios-arrow-up" *ngIf="tableState == 'open'"></ion-icon>
+		</ion-card-header>
+		<div class="listWrapper" [@HeightToggle]="tableState">
+			<table class="bordered">
+				<thead>
+					<tr>
+						<th>DATE</th>
+						<th>PLACE</th>
+						<th>COST</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr *ngFor="let sch of schList">
+						<td class="text-center date">{{sch.gathering|date:"yyyy-MM-dd"}}</td>
+						<td><span class="cursor-p" (click)="setSchedule(sch.idx)">{{sch.place_name}}</span></td>
+						<td class="text-center">{{sch.cost}} 원</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</ion-card>
+	
 </ion-content>

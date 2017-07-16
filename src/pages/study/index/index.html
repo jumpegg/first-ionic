@@ -15,7 +15,63 @@
 
 </ion-header>
 
-
 <ion-content padding>
+	<div class="scheduleBox row">
+		<div class="col s12 scheduleWrap card-panel">
+			<h6 class="cardLabel padding10">
+				다음 모임 일정
+			</h6>
+			<div class="padding20">
+				<ul class="infoWrapper">
+					<li class="row">
+						<ion-icon name="md-calendar"></ion-icon>
+						<p class="dataLabel">DATE</p>
+						<span class="info-data">{{schedule.gathering|date:"yyyy-MM-dd"}}</span>
+					</li>
+					<li class="row">
+						<ion-icon name="md-alarm"></ion-icon>
+						<p class="dataLabel">TIME</p>
+						<span class="info-data">{{schedule.start}} ~ {{schedule.end}}</span>
+					</li>
+					<li class="row">
+						<ion-icon name="logo-usd"></ion-icon>
+						<p class="dataLabel">COST</p>
+						<span class="info-data">{{schedule.cost}}</span>
+					</li>
+				</ul>
+				<hr>
+				<ul class="mapWrapper">
+					<li class="row map-info-box">
+						<ion-icon name="md-move"></ion-icon>
+						<p class="dataLabel">PLACE</p>
+						<span class="map-data">{{schedule.place_name}}</span>
+					</li>
+					<li class="row StudyIndexMap" id="map">
 
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="card-panel notice">
+		<h6 class="cardLabel padding10">공지사항</h6>
+		<ion-list>
+			<ion-item *ngFor="let notice of noticeList; let i = index">
+				<p class="n-date">{{notice.c_date|date:"yyyy-MM-dd"}}</p>
+				<p class="n-user">{{notice.id}}</p>
+				<p class="n-title">{{notice.title}}</p>
+			</ion-item>
+		</ion-list>
+	</div>
+	<div class="card-panel freetalk">
+		<h6 class="cardLabel padding10">자유게시판</h6>
+		<ion-list class="freetalk-list">
+			<ion-item *ngFor="let freetalk of freetalkList; let j = index">
+				<p class="f-date">{{freetalk.c_date|date:"yyyy-MM-dd"}}</p>
+				<p class="f-user">{{freetalk.id}}</p>
+				<p class="f-title">{{freetalk.title}}</p>
+			</ion-item>
+		</ion-list>
+	</div>
+	
 </ion-content>
