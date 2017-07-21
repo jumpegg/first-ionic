@@ -1,3 +1,27 @@
 page-freetalk {
-
+	.freeTable{
+		th, td{
+			padding: 5px;
+		}
+		thead{
+			background-color: #CCCCCC;
+			color: #FFF;
+		}
+		tbody{
+			color: #666666;
+			td{
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+		.free-date{
+			width: 20%;
+		}
+		.free-title{
+			width: 60%;
+		}
+		.free-auth{
+			width: 20%;
+		}
+	}
 }

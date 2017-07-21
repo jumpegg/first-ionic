@@ -7,14 +7,36 @@
 <ion-header>
 	<ion-navbar>
 		<button menuToggle>
-	  		<ion-icon name="menu"></ion-icon>
-	  	</button>
+	  	<ion-icon name="menu"></ion-icon>
+	  </button>
 		<ion-title>자유게시판</ion-title>
 	</ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content padding style="background-color:#FFFFFF">
+	<table class="bordered freeTable">
+		<thead>
+			<tr>
+				<th class="free-date" text-center>DATE</th>
+				<th class="free-title" text-center>TITLE</th>
+				<th class="free-auth" text-center>작성자</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let freetalk of fList">
+				<td class="text-center date" text-nowrap text-center>{{freetalk.c_date|date:"MM-dd"}}</td>
+				<td text-nowrap>
+					<span class="cursor" (click)="move_read(freetalk.idx)">
+						{{freetalk.title}}
+					</span>
+				</td>
+				<td class="text-center" text-nowrap text-center>{{freetalk.id}}</td>
+			</tr>
+			<tr *ngIf="no_freetalk">
+				<td class="no_freetalk" colspan="3">
+					아직 등록된 글이 없습니다.
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </ion-content>
